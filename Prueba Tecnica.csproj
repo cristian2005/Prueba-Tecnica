@@ -168,6 +168,7 @@
     <Content Include="AngularJsApp\Books\Controller.js" />
     <Content Include="AngularJsApp\Books\Module.js" />
     <Content Include="AngularJsApp\Books\Services.js" />
+    <Content Include="AngularJsApp\Books\spinnerLoader.js" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
