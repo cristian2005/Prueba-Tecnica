@@ -83,3 +83,24 @@ C:\Users\Critian Herrera\source\repos\Prueba Tecnica\Prueba-Tecnica\obj\Debug\Pr
 C:\Users\Critian Herrera\source\repos\Prueba Tecnica\Prueba-Tecnica\obj\Debug\Prueba Tecnica.csproj.CopyComplete
 C:\Users\Critian Herrera\source\repos\Prueba Tecnica\Prueba-Tecnica\obj\Debug\Prueba Tecnica.dll
 C:\Users\Critian Herrera\source\repos\Prueba Tecnica\Prueba-Tecnica\obj\Debug\Prueba Tecnica.pdb
+D:\Prueba-Tecnica\Prueba-Tecnica\obj\Debug\Prueba Tecnica.dll
+D:\Prueba-Tecnica\Prueba-Tecnica\obj\Debug\Prueba Tecnica.pdb
+D:\Prueba-Tecnica\Prueba-Tecnica\bin\Prueba Tecnica.dll.config
+D:\Prueba-Tecnica\Prueba-Tecnica\bin\Prueba Tecnica.dll
+D:\Prueba-Tecnica\Prueba-Tecnica\bin\Prueba Tecnica.pdb
+D:\Prueba-Tecnica\Prueba-Tecnica\bin\Newtonsoft.Json.dll
+D:\Prueba-Tecnica\Prueba-Tecnica\bin\System.Net.Http.Formatting.xml
+D:\Prueba-Tecnica\Prueba-Tecnica\bin\System.Web.Helpers.xml
+D:\Prueba-Tecnica\Prueba-Tecnica\bin\System.Web.Http.xml
+D:\Prueba-Tecnica\Prueba-Tecnica\bin\System.Web.Http.WebHost.xml
+D:\Prueba-Tecnica\Prueba-Tecnica\bin\System.Web.Mvc.xml
+D:\Prueba-Tecnica\Prueba-Tecnica\bin\System.Web.Optimization.xml
+D:\Prueba-Tecnica\Prueba-Tecnica\bin\System.Web.Razor.xml
+D:\Prueba-Tecnica\Prueba-Tecnica\bin\System.Web.WebPages.xml
+D:\Prueba-Tecnica\Prueba-Tecnica\bin\System.Web.WebPages.Deployment.xml
+D:\Prueba-Tecnica\Prueba-Tecnica\bin\System.Web.WebPages.Razor.xml
+D:\Prueba-Tecnica\Prueba-Tecnica\bin\Antlr3.Runtime.pdb
+D:\Prueba-Tecnica\Prueba-Tecnica\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Prueba-Tecnica\Prueba-Tecnica\obj\Debug\Prueba Tecnica.csprojAssemblyReference.cache
+D:\Prueba-Tecnica\Prueba-Tecnica\obj\Debug\Prueba Tecnica.csproj.CopyComplete
+D:\Prueba-Tecnica\Prueba-Tecnica\bin\Newtonsoft.Json.xml

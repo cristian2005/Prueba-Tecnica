@@ -1,24 +1,171 @@
-﻿<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+﻿<div class="container" ng-controller="books-controller">
+    <toaster-container toaster-options="{'close-button':true, 'time-out':{ 'toast-success': 5000, 'toast-error': 0 } }">
+    </toaster-container>
+
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            Books Details - Grid CRUD operations
+        </div><br />
+        <button data-toggle="modal" data-target="#AddNew" class="btn btn-info">Add Book</button>
+        <br />
+        <br />
+
+        <table id="tablaBook" class="table table-bordered">
+            <thead style="background-color:lightblue;">
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Description </th>
+                    <th>Excerpt</th>
+                    <th>PublishDate</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-if="spiner">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><spinner-loader sl-visible="true" sl-size="large"></spinner-loader></td>
+                </tr>
+                <tr ng-repeat="book in Books">
+                    <td> {{book.id}}</td>
+                    <td> {{book.title}} </td>
+                    <td>{{book.description}}</td>
+                    <td>{{book.excerpt}}</td>
+                    <td>{{book.publishDate}}</td>
+                    <td style="width:200px;">
+                        <a ng-click="getById(book.id)" data-toggle="modal" data-target="#AddNew" class="btn btn-info">Update</a>
+                        <a ng-click="delete(book.id)" class="btn btn-danger">Delete</a>
+                        <a data-toggle="modal" ng-click="getById(book.id);" data-target="#modalVBook" style="cursor:pointer;" class="glyphicon glyphicon-eye-open btn-lg"></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- Modal -->
+    <div id="modalVBook" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">View Book</h4>
+                </div>
+                <div class="modal-body">
+                    <div ng-if="spiner" class="row">
+                        <div class="col-md-6">
+
+                        </div>
+                        <div class="col-md-6">
+                            <spinner-loader sl-visible="true" sl-size="large"></spinner-loader>
+                        </div>
+                    </div>
+                    <div class="modal-body" style="margin-left:20px">
+                        <form class="form-horizontal" name="AddNewForm">
+
+                            <div class="form-group">
+                                <label class="control-label">Id</label>
+                                <input readonly class="form-control" name="EmpName"
+                                       ng-model="id" ng-required="true" type="number"
+                                       placeholder="Id" />
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label"> Title</label>
+                                <input readonly class="form-control" name="Title"
+                                       ng-model="title" type="text" placeholder="Title" />
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Description</label>
+                                <textarea readonly class="form-control" name="Description"
+                                          ng-model="description"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Excerpt</label>
+                                <textarea readonly class="form-control" name="Description"
+                                          ng-model="excerpt"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label"> PublishDate</label>
+                                <input readonly class="form-control" name="PublishDate"
+                                       ng-model="publishDate" type="datetime-local"
+                                       placeholder="PublishDate" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" ng-click="getById(id-1)" class="btn btn-info pull-left">Anterior</button>
+                    <button type="button" ng-click="getById(id+1)" class="btn btn-primary">Siguiente</button>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    @*New record Modal addition..*@
+    <div class="modal" id="AddNew" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h3 class="text-info">Add New Books</h3>
+                </div>
+                <div class="modal-body" style="margin-left:20px">
+                    @*Add New Employee form starts here...*@
+                    <form class="form-horizontal" name="AddNewForm">
+
+                        <div class="form-group">
+                            <label class="control-label">Id</label>
+                            <input class="form-control" name="EmpName"
+                                   ng-model="id" ng-required="true" type="number"
+                                   placeholder="Id" />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label"> Title</label>
+                            <input class="form-control" name="Title"
+                                   ng-model="title" type="text" placeholder="Title" />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Description</label>
+                            <textarea class="form-control" name="Description"
+                                      ng-model="description"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Excerpt</label>
+                            <textarea class="form-control" name="Description"
+                                      ng-model="excerpt"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label"> PublishDate</label>
+                            <input class="form-control" name="PublishDate"
+                                   ng-model="publishDate" type="datetime-local"
+                                   placeholder="PublishDate" />
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary"
+                            id="btnSave" ng-click="save()">
+                        Save
+                    </button>
+                    <button type="button" class="btn btn-default"
+                            data-dismiss="modal" ng-click="resetSave()">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>ASP.NET Web API is a framework that makes it easy to build HTTP services that reach
-        a broad range of clients, including browsers and mobile devices. ASP.NET Web API
-        is an ideal platform for building RESTful applications on the .NET Framework.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301870">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301871">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301872">Learn more &raquo;</a></p>
-    </div>
-</div>
+
+
+@section scripts{
+    <script src="~/AngularJSApp/Books/Module.js"></script>
+    <script src="~/AngularJSApp/Books/Services.js"></script>
+    <script src="~/AngularJSApp/Books/Controller.js"></script>
+    <script src="~/AngularJSApp/Books/spinnerLoader.js"></script>
+
+}

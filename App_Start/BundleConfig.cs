@@ -21,7 +21,13 @@ namespace Prueba_Tecnica
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/toaster.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/angular").Include(
+    "~/Scripts/angular.js",
+    "~/Scripts/angular-animate.min.js",
+    "~/Scripts/toaster.js"));
         }
     }
 }
